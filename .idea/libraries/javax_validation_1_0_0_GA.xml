@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="javax.validation-1.0.0.GA">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/javax.validation-1.0.0.GA.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -32,5 +32,7 @@
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
     <orderEntry type="library" name="jstl-api-1.2" level="project" />
     <orderEntry type="library" name="jstl-impl-1.2" level="project" />
+    <orderEntry type="library" name="javax.validation-1.0.0.GA" level="project" />
+    <orderEntry type="library" name="commons-dbcp-1.4" level="project" />
   </component>
 </module>

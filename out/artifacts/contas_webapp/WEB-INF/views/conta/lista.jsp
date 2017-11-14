@@ -11,6 +11,16 @@
 <html>
 <head>
     <title>Title</title>
+
+    <script src="resources/js/jquery.js"></script>
+
+    <script>
+        function pagaAgora(id) {
+            $.post("pagarConta", { id: id }, function() {
+                $('#conta_' + id).html("Paga");
+            });
+        };
+    </script>
 </head>
 <body>
 <table style="height: 10px; width: 775px;" border="1">
@@ -41,9 +51,13 @@
                     </c:if>
                 </td>
                 <td><fmt:formatDate value="${conta.dataPagamento.time}" pattern="dd/MM/yyyy"/></td>
-                <td>
-                    <a href="removerConta?id=${conta.id}">Deletar</a>
-                    <a href="mostrarConta?id=${conta.id}">Alterar</a>
+                <td id="conta_${conta.id}">
+                    <a href="removerConta?id=${conta.id}">Deletar</a> |
+                    <a href="mostrarConta?id=${conta.id}">Alterar</a> |
+                    
+                    <c:if test="${conta.paga eq false}">
+                        <a href="#" onclick="pagaAgora(${conta.id})">Pagar</a>
+                    </c:if>
                 </td>
             </tr>
         </c:forEach>

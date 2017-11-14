@@ -11,6 +11,17 @@
 						
 	<context:component-scan base-package="br.com.caelum.contas" />
 	<mvc:annotation-driven />
+	<mvc:default-servlet-handler />
+	<mvc:interceptors>
+		<bean class="br.com.caelum.contas.interceptor.AutorizadorInterceptor" />
+	</mvc:interceptors>
+
+	<bean id="mysqlDataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="org.hsqldb.jdbcDriver" />
+		<property name="url" value="jdbc:hsqldb:file:contas.db" />
+		<property name="username" value="sa" />
+		<property name="password" value="" />
+	</bean>
 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/" />
